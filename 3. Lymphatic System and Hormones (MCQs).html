@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQs on Lymphatic System and Hormones</title>
+    <style>
+        :root {
+            --bg-color: #f5f7fa;
+            --container-bg: white;
+            --text-color: #333;
+            --border-color: #ddd;
+            --primary-color: #3498db;
+            --header-color: #2c3e50;
+            --secondary-text: #7f8c8d;
+            --progress-bg: #ecf0f1;
+            --question-bg: #f8f9fa;
+            --option-bg: #fff;
+            --option-hover: #f1f8ff;
+            --option-selected: #d1ecf1;
+            --correct-bg: #d4edda;
+            --correct-border: #28a745;
+            --incorrect-bg: #f8d7da;
+            --incorrect-border: #dc3545;
+            --button-bg: #3498db;
+            --button-hover: #2980b9;
+            --button-disabled: #bdc3c7;
+            --restart-bg: #2ecc71;
+            --restart-hover: #27ae60;
+            --review-bg: #f39c12;
+            --review-hover: #e67e22;
+            --toggle-bg: #ecf0f1;
+            --toggle-slider: white;
+            --toggle-text: #7f8c8d;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --container-bg: #16213e;
+            --text-color: #e6e6e6;
+            --border-color: #394867;
+            --primary-color: #4cc9f0;
+            --header-color: #e6e6e6;
+            --secondary-text: #a9a9a9;
+            --progress-bg: #394867;
+            --question-bg: #1f4068;
+            --option-bg: #16213e;
+            --option-hover: #1f4068;
+            --option-selected: #1f4068;
+            --correct-bg: #2d5a2d;
+            --correct-border: #4caf50;
+            --incorrect-bg: #5a2d2d;
+            --incorrect-border: #f44336;
+            --button-bg: #4cc9f0;
+            --button-hover: #3aa8d0;
+            --button-disabled: #5d6d7e;
+            --restart-bg: #2ecc71;
+            --restart-hover: #27ae60;
+            --review-bg: #f39c12;
+            --review-hover: #e67e22;
+            --toggle-bg: #394867;
+            --toggle-slider: #4cc9f0;
+            --toggle-text: #e6e6e6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            position: relative;
+        }
+        h1 {
+            color: var(--header-color);
+            margin-bottom: 5px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .author {
+            color: var(--secondary-text);
+            font-style: italic;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .description {
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 35px;
+            right: 0;
+            display: flex;
+            align-items: center;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--toggle-bg);
+            transition: .4s;
+            border-radius: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--toggle-text);
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 60px;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--toggle-slider);
+            transition: .4s;
+            border-radius: 34px;
+            z-index: 1;
+        }
+        .slider-text {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .light-text, .dark-text {
+            transition: opacity 0.3s;
+        }
+        .dark-mode .light-text {
+            opacity: 0.5;
+        }
+        .light-text {
+            opacity: 0.5;
+        }
+        .dark-mode .dark-text {
+            opacity: 1;
+        }
+        .dark-text {
+            opacity: 0.5;
+        }
+        input:checked + .slider:before {
+            transform: translateX(52px);
+        }
+        .progress-container {
+            background: var(--progress-bg);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            position: relative;
+            height: 10px;
+            transition: background-color 0.3s;
+        }
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.3s ease, background-color 0.3s;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--header-color);
+            transition: color 0.3s;
+        }
+        .question {
+            background: var(--question-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: background-color 0.3s;
+        }
+        .question-number {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .options {
+            display: grid;
+            grid-gap: 10px;
+        }
+        .option {
+            padding: 12px 15px;
+            background: var(--option-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option:hover {
+            background: var(--option-hover);
+            border-color: var(--primary-color);
+        }
+        .option.selected {
+            background: var(--option-selected);
+            border-color: var(--primary-color);
+        }
+        .option.correct {
+            background: var(--correct-bg);
+            border-color: var(--correct-border);
+        }
+        .option.incorrect {
+            background: var(--incorrect-bg);
+            border-color: var(--incorrect-border);
+        }
+        .feedback {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: none;
+        }
+        .feedback.correct {
+            background: var(--correct-bg);
+            color: var(--text-color);
+            border: 1px solid var(--correct-border);
+            display: block;
+        }
+        .feedback.incorrect {
+            background: var(--incorrect-bg);
+            color: var(--text-color);
+            border: 1px solid var(--incorrect-border);
+            display: block;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        button {
+            padding: 10px 20px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: var(--button-hover);
+        }
+        button:disabled {
+            background: var(--button-disabled);
+            cursor: not-allowed;
+        }
+        .results {
+            text-align: center;
+            padding: 30px;
+            display: none;
+        }
+        .score {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--header-color);
+        }
+        .score-value {
+            font-size: 48px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .restart-btn {
+            margin-top: 20px;
+            background: var(--restart-bg);
+        }
+        .restart-btn:hover {
+            background: var(--restart-hover);
+        }
+        .review-btn {
+            margin-top: 20px;
+            background: var(--review-bg);
+        }
+        .review-btn:hover {
+            background: var(--review-hover);
+        }
+        .review-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--question-bg);
+            border-radius: 8px;
+            display: none;
+        }
+        .review-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--header-color);
+            text-align: center;
+        }
+        .review-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid var(--incorrect-border);
+            background: var(--container-bg);
+            border-radius: 4px;
+        }
+        .review-question-number {
+            font-weight: bold;
+            color: var(--incorrect-border);
+            margin-bottom: 8px;
+        }
+        .review-question-text {
+            margin-bottom: 10px;
+        }
+        .review-answer {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+        .review-correct {
+            color: var(--correct-border);
+        }
+        .review-explanation {
+            margin-top: 5px;
+            font-style: italic;
+            color: var(--secondary-text);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MCQs on Lymphatic System and Hormones</h1>
+            <p class="author">Dr. Samy Salem</p>
+            <p class="description">Test your knowledge of Lymphatic System and Hormones: cortisol, DHEA, thyroid, estrogen, progesterone, and lymphatic insufficiency</p>
+            <div class="theme-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider">
+                        <div class="slider-text">
+                            <span class="light-text">Light</span>
+                            <span class="dark-text">Dark</span>
+                        </div>
+                    </span>
+                </label>
+            </div>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div class="stats">
+            <div>Question: <span id="current-question">1</span>/<span id="total-questions">30</span></div>
+            <div>Score: <span id="score">0</span>/<span id="total-score">30</span></div>
+        </div>
+
+        <div id="quiz-container">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+
+        <div class="navigation">
+            <button id="prev-btn" disabled>Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+
+        <div id="results" class="results">
+            <div class="score">Your Score: <span class="score-value" id="final-score">0</span>/30</div>
+            <p id="performance-message"></p>
+            <button class="restart-btn" id="restart-btn">Restart Quiz</button>
+            <button class="review-btn" id="review-btn">Review Incorrect Answers</button>
+        </div>
+
+        <div id="review-section" class="review-section">
+            <h2 class="review-title">Questions Answered Incorrectly</h2>
+            <div id="incorrect-questions-list"></div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data extracted from 3. Lymphatic System and Hormones (MCQs).pdf
+        const originalQuizData = [
+            {
+                question: "In a clinical scenario, a patient is undergoing prolonged chronic stress. Physiologically, which effect does chronic high cortisol have on the lymphatic system?",
+                options: [
+                    "It promotes lymphatic vessel integrity and function.",
+                    "It stimulates lymphangiogenesis.",
+                    "It promotes apoptosis of lymphocytes and causes atrophy of lymphoid tissues.",
+                    "It acts as an anti-glucocorticoid to support NK/T cell function."
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "What is the primary role of Dehydroepiandrosterone (DHEA) concerning the lymphatic system during periods of stress?",
+                options: [
+                    "It enhances the immunosuppressive effects of cortisol.",
+                    "It acts antagonistically to cortisol, supporting immune cell function and protecting lymphoid cells from damage.",
+                    "It directly causes the accumulation of protein-rich fluid in the interstitial space.",
+                    "It inhibits lymph flow by increasing smooth muscle relaxation in lymphatic capillaries."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "A patient with untreated Hashimoto's Thyroiditis presents with swollen cervical lymph nodes. What is the logical explanation for this specific lymphatic symptom?",
+                options: [
+                    "The lymph nodes are inflamed and congested while attempting to clear inflammatory waste associated with the autoimmune condition.",
+                    "Low thyroid hormone levels cause direct hyper-proliferation of lymphatic endothelial cells.",
+                    "The condition forces dermal backflow across the midline.",
+                    "Progesterone accumulation is inhibiting the clearance of local fluid."
+                ],
+                answer: 0,
+                explanation: ""
+            },
+            {
+                question: "How does high vagal tone (parasympathetic dominance) logically benefit lymphatic function?",
+                options: [
+                    "By increasing capillary permeability and interstitial fluid load.",
+                    "By causing vasoconstriction of lymphatics and microcirculation.",
+                    "By promoting slow, deep diaphragmatic breathing, which creates strong intra-thoracic pressure changes that accelerate Thoracic Duct flow.",
+                    "By raising sinusoidal pressure in the liver."
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "Why is the liver functionally significant to the overall volume capacity of the lymphatic system?",
+                options: [
+                    "It filters 100% of the body's lymph before it enters the venous system.",
+                    "It generates 25% to 50% of the body's entire lymph fluid due to the high permeability of its sinusoids.",
+                    "It secretes the primary enzymes responsible for lymphangiogenesis.",
+                    "It is the primary site of DHEA synthesis for immune modulation."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "How do dietary fats logically bypass initial first-pass liver metabolism during absorption?",
+                options: [
+                    "Enterocytes package them into chylomicrons which enter lacteals and route through the thoracic duct to the left subclavian vein.",
+                    "They are broken down entirely by pancreatic lipase directly in the bloodstream.",
+                    "They diffuse directly across the stomach lining into the portal vein.",
+                    "They are converted to albumin before entering the lymphatic capillaries."
+                ],
+                answer: 0,
+                explanation: ""
+            },
+            {
+                question: "A patient with congestive heart failure develops significant pitting edema in their lower extremities. Based on lymphatic principles, what type of insufficiency is this patient primarily experiencing?",
+                options: [
+                    "Mechanical Insufficiency",
+                    "High-volume (Dynamic) Insufficiency",
+                    "Safety Valve Insufficiency",
+                    "Congenital Agenesis"
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "If a patient with chronic dynamic insufficiency goes untreated for many months, what is the logical progression of their condition?",
+                options: [
+                    "The lymphatic system will permanently adapt to the high load with no structural damage.",
+                    "The excess fluid will automatically reroute to the lymphatic system.",
+                    "The dynamic insufficiency will spontaneously resolve due to increased estrogen production.",
+                    "The continuous stress will cause damage to collector walls and valves, progressing to combined insufficiency or secondary mechanical insufficiency (lymphedema)."
+                ],
+                answer: 3,
+                explanation: ""
+            },
+            {
+                question: "Which of the following components of the Lymph Obligatory Load is the most crucial, as its failure to clear leads to chronic inflammation and fibrosis?",
+                options: [
+                    "The water load",
+                    "The particle/cell load",
+                    "The lipid load",
+                    "The protein load"
+                ],
+                answer: 3,
+                explanation: ""
+            },
+            {
+                question: "A breast cancer survivor who underwent axillary lymph node dissection presents with a chronically swollen, hardened, firm arm. What type of lymphatic insufficiency describes her primary condition?",
+                options: [
+                    "High-volume (Dynamic) Insufficiency",
+                    "Low-volume (Mechanical) Insufficiency",
+                    "Transient Edema",
+                    "Hypoproteinemia"
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "Why are patients with mechanical insufficiency (lymphedema) at a high risk for recurrent bacterial skin infections (like cellulitis)?",
+                options: [
+                    "The surgical removal of lymph nodes removes all immune cells from the body.",
+                    "The stagnant, protein-rich fluid acts as an excellent culture medium for bacteria.",
+                    "Lymphedema directly suppresses the production of cortisol and DHEA.",
+                    "Fibrosis prevents antibiotics from reaching the skin."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "Safety Valve Insufficiency (Combined Failure) occurs when two specific physiological states happen simultaneously. What are they?",
+                options: [
+                    "Lymph load decreases while transport capacity decreases.",
+                    "Lymph load increases while transport capacity remains normal.",
+                    "Lymph load increases while transport capacity decreases.",
+                    "Lymph load remains normal while transport capacity increases."
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "In the mechanism of Safety Valve Insufficiency breakdown, what direct consequence does chronic lymphatic hypertension have on the lymph vessels?",
+                options: [
+                    "It causes the vessels to expand, resulting in the valves losing their ability to close completely (valve insufficiency).",
+                    "It causes the vessels to shrink and disappear.",
+                    "It triggers immediate lymphangiogenesis.",
+                    "It forces the vessels to convert into venous capillaries."
+                ],
+                answer: 0,
+                explanation: ""
+            },
+            {
+                question: "Following surgical damage to lymphatic vessels, what is the primary function of the compensatory mechanism known as lymphangiogenesis?",
+                options: [
+                    "To force fluid backward into the dermal lymphatics.",
+                    "To repair a short lymphatic gap by creating new vessels to bridge the immediate surgical site.",
+                    "To route lymph directly into the arterial supply.",
+                    "To permanently decrease the overall transport capacity of the system."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "In advanced lymphedema, how does dermal backflow serve as a compensatory mechanism?",
+                options: [
+                    "It forces fluid exclusively into the deep venous system.",
+                    "It completely shuts down all lymph fluid production in the affected limb.",
+                    "It serves as the main transportation structure, extending across anatomical boundaries to connect the affected area to functional vessels in an adjacent lymphosome.",
+                    "It reverses the flow of lymph back into the primary tumor site."
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "If a patient has severe obstruction in their right axilla, which compensatory drainage region might logically be utilized by dermal backflow crossing the chest midline?",
+                options: [
+                    "Ipsilateral clavicular region",
+                    "Contralateral axilla",
+                    "Ipsilateral inguinal region",
+                    "Parascapular region"
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "A patient with severe pelvic lymphatic obstruction requires alternative drainage routes for their lower limb. According to compensatory mechanisms, which region might fluid reroute through to bypass the pelvis and access deeper nodes?",
+                options: [
+                    "Contralateral axilla",
+                    "Ipsilateral popliteal",
+                    "Gluteal region",
+                    "Ipsilateral inguinal"
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "How does estrogen (E2) provide a protective and functional role in the lymphatic system?",
+                options: [
+                    "By inhibiting lymphangiogenesis.",
+                    "By causing persistent smooth muscle relaxation and fluid retention.",
+                    "By promoting lymphatic vessel integrity, stimulating lymphangiogenesis, and enhancing LEC mobility via the ER-alpha receptor.",
+                    "By rapidly breaking down lymphoid tissues."
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "Why might the onset of menopause logically be associated with worsened lymphedema or fluid retention in some patients?",
+                options: [
+                    "Menopause triggers a massive surge in estrogen, overstimulating the lymphatics.",
+                    "Menopause drastically lowers blood pressure, halting capillary filtration entirely.",
+                    "Menopause directly severs the thoracic duct.",
+                    "Menopause involves a decline in estrogen (E2), which reduces lymphatic vessel integrity and impairs lymphangiogenesis."
+                ],
+                answer: 3,
+                explanation: ""
+            },
+            {
+                question: "Progesterone has what specific effect on smooth muscle cells that negatively impacts lymphatic function?",
+                options: [
+                    "It causes hyper-contractility, leading to vessel spasms.",
+                    "It has a relaxing effect, which increases the burden on lymphatic capillaries.",
+                    "It causes the smooth muscle to convert into skeletal muscle.",
+                    "It completely paralyzes the lymphatic valves."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "What happens when Lymphatic Endothelial Cells (LECs) experience an enzymatic dysfunction that prevents them from converting active progesterone into its metabolites?",
+                options: [
+                    "There is an unchecked local accumulation of progesterone, which disrupts immune regulation and impairs anti-inflammatory signaling.",
+                    "Progesterone levels drop to zero, causing massive dehydration.",
+                    "The LECs immediately undergo apoptosis.",
+                    "The local immune response becomes hyper-active and attacks the lymphatic vessels."
+                ],
+                answer: 0,
+                explanation: ""
+            },
+            {
+                question: "A high Cortisol/DHEA ratio (CDR) correlates clinically with which physiological state?",
+                options: [
+                    "Stress resilience and support for immune health.",
+                    "Peak athletic performance.",
+                    "Chronic stress and lymphatic/immune dysfunction.",
+                    "Enhanced glymphatic clearance."
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "A patient with severe, chronic liver disease (cirrhosis) develops ascites. Based on the liver-lymphatic axis, what is the primary mechanism causing this?",
+                options: [
+                    "Reduced sinusoidal pressure leading to lymphatic collapse.",
+                    "Hepatic congestion raising sinusoidal pressure, forcing fluid to leak into the peritoneal cavity and overwhelming the lymphatics.",
+                    "The complete cessation of albumin production.",
+                    "A blockage in the parasternal lymphatic pathway."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "A patient is suffering from chronic venous insufficiency (CVI). Why does this condition specifically lead to dynamic lymphatic insufficiency?",
+                options: [
+                    "CVI causes direct scarring of the lymph nodes.",
+                    "Poor vein function causes a back-up of fluid into the tissues, creating an excessive volume of interstitial fluid that overwhelms the intact lymphatic system.",
+                    "CVI destroys the lymphatic valves directly.",
+                    "CVI significantly lowers capillary filtration rates."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "Why is hypoproteinemia (low protein levels in the blood) a common cause of dynamic lymphatic insufficiency?",
+                options: [
+                    "It increases the oncotic pressure inside the blood vessels, trapping fluid.",
+                    "It decreases the osmotic pressure, allowing excessive fluid to leak from the capillaries into the tissues, increasing the lymphatic load.",
+                    "It causes the lymphatic vessels to spasm uncontrollably.",
+                    "It leads to the rapid proliferation of cancer cells in the lymph nodes."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "During the initial phases of dynamic insufficiency, how does the resulting edema typically present compared to advanced lymphedema?",
+                options: [
+                    "It is non-pitting and very hard.",
+                    "It is high in protein and low in water.",
+                    "It is typically pitting edema that is high in water and low in protein.",
+                    "It presents exclusively as ascites."
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "A patient is completely immobile following surgery. How does immobility logically contribute to the risk of dynamic lymphatic insufficiency?",
+                options: [
+                    "Lack of muscle activity reduces the natural pumping action that normally aids both lymph and venous return, allowing fluid to pool.",
+                    "Immobility causes an immediate spike in cortisol levels, shutting down lymph flow.",
+                    "Immobility increases the heart rate, forcing more fluid into the tissues.",
+                    "Immobility directly damages the lymphatic valves."
+                ],
+                answer: 0,
+                explanation: ""
+            },
+            {
+                question: "The glymphatic system and meningeal lymphatics serve as waste clearance pathways for which specific organ system?",
+                options: [
+                    "The gastrointestinal tract",
+                    "The cardiovascular system",
+                    "The central nervous system (Brain)",
+                    "The hepatic system"
+                ],
+                answer: 2,
+                explanation: ""
+            },
+            {
+                question: "How does low vagal tone (sympathetic dominance) negatively impact the glymphatic system?",
+                options: [
+                    "It causes excessive, rapid brain waste removal.",
+                    "It disrupts sleep, leading to glymphatic stasis, brain waste accumulation, and neuroinflammation.",
+                    "It forces the glymphatic system to drain into the liver instead of the cervical nodes.",
+                    "It creates strong intra-thoracic pressure changes that damage brain vessels."
+                ],
+                answer: 1,
+                explanation: ""
+            },
+            {
+                question: "In the context of mechanical insufficiency, the deposition of disorganized collagen leading to hardened, firm tissue is known as:",
+                options: [
+                    "Hyperkeratosis",
+                    "Lymphangiogenesis",
+                    "Papillomatosis",
+                    "Fibrosis"
+                ],
+                answer: 3,
+                explanation: ""
+            }
+        ];
+
+        // Function to shuffle an array (Fisher-Yates algorithm)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Function to create a randomized version of the quiz data
+        function createRandomizedQuizData() {
+            const randomizedData = [];
+            
+            originalQuizData.forEach(question => {
+                // Create a copy of the original question
+                const randomizedQuestion = {
+                    question: question.question,
+                    options: [...question.options], // Copy options array
+                    originalAnswer: question.answer, // Store original answer index
+                    explanation: question.explanation
+                };
+                
+                // Create an array of indices [0, 1, 2, 3]
+                const indices = [0, 1, 2, 3];
+                
+                // Shuffle the indices
+                shuffleArray(indices);
+                
+                // Create a new options array with shuffled order
+                const shuffledOptions = indices.map(index => question.options[index]);
+                
+                // Find the new position of the correct answer
+                const newAnswerIndex = indices.indexOf(question.answer);
+                
+                // Update the question with shuffled options and new answer
+                randomizedQuestion.options = shuffledOptions;
+                randomizedQuestion.answer = newAnswerIndex;
+                
+                randomizedData.push(randomizedQuestion);
+            });
+            
+            return randomizedData;
+        }
+
+        // Create randomized quiz data
+        let quizData = createRandomizedQuizData();
+
+        // Quiz state variables
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = new Array(quizData.length).fill(null);
+        let incorrectQuestions = [];
+
+        // DOM elements
+        const quizContainer = document.getElementById('quiz-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const currentQuestionEl = document.getElementById('current-question');
+        const totalQuestionsEl = document.getElementById('total-questions');
+        const scoreEl = document.getElementById('score');
+        const totalScoreEl = document.getElementById('total-score');
+        const resultsContainer = document.getElementById('results');
+        const finalScoreEl = document.getElementById('final-score');
+        const performanceMessageEl = document.getElementById('performance-message');
+        const restartBtn = document.getElementById('restart-btn');
+        const reviewBtn = document.getElementById('review-btn');
+        const reviewSection = document.getElementById('review-section');
+        const incorrectQuestionsList = document.getElementById('incorrect-questions-list');
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const lightText = document.querySelector('.light-text');
+        const darkText = document.querySelector('.dark-text');
+
+        // Initialize quiz
+        function initQuiz() {
+            totalQuestionsEl.textContent = quizData.length;
+            totalScoreEl.textContent = quizData.length;
+            showQuestion();
+            updateProgressBar();
+            
+            // Initialize dark mode based on system preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.checked = true;
+                updateToggleText(true);
+            } else {
+                updateToggleText(false);
+            }
+            
+            // Event listeners
+            prevBtn.addEventListener('click', showPreviousQuestion);
+            nextBtn.addEventListener('click', showNextQuestion);
+            restartBtn.addEventListener('click', restartQuiz);
+            reviewBtn.addEventListener('click', showIncorrectQuestions);
+            darkModeToggle.addEventListener('change', toggleDarkMode);
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            const isDarkMode = darkModeToggle.checked;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            updateToggleText(isDarkMode);
+        }
+
+        // Update toggle text opacity
+        function updateToggleText(isDarkMode) {
+            if (isDarkMode) {
+                lightText.style.opacity = '0.5';
+                darkText.style.opacity = '1';
+            } else {
+                lightText.style.opacity = '1';
+                darkText.style.opacity = '0.5';
+            }
+        }
+
+        // Show current question
+        function showQuestion() {
+            currentQuestionEl.textContent = currentQuestion + 1;
+            scoreEl.textContent = score;
+            
+            const question = quizData[currentQuestion];
+            let optionsHTML = '';
+            
+            question.options.forEach((option, index) => {
+                let optionClass = 'option';
+                if (userAnswers[currentQuestion] === index) {
+                    optionClass += ' selected';
+                    if (index === question.answer) {
+                        optionClass += ' correct';
+                    } else {
+                        optionClass += ' incorrect';
+                    }
+                }
+                
+                optionsHTML += `
+                    <div class="${optionClass}" data-index="${index}">
+                        ${String.fromCharCode(65 + index)}) ${option}
+                    </div>
+                `;
+            });
+            
+            let feedbackHTML = '';
+            if (userAnswers[currentQuestion] !== null) {
+                const isCorrect = userAnswers[currentQuestion] === question.answer;
+                const correctLetter = String.fromCharCode(65 + question.answer);
+                const correctAnswerText = question.options[question.answer];
+                
+                feedbackHTML = `
+                    <div class="feedback ${isCorrect ? 'correct' : 'incorrect'}">
+                        ${isCorrect ? '✓ Correct!' : '✗ Incorrect!'} 
+                        ${!isCorrect ? `Correct answer: ${correctLetter}) ${correctAnswerText}` : ''}
+                        ${question.explanation ? `<br><br>Explanation: ${question.explanation}` : ''}
+                    </div>
+                `;
+            }
+            
+            quizContainer.innerHTML = `
+                <div class="question">
+                    <div class="question-number">Question ${currentQuestion + 1}/${quizData.length}</div>
+                    <div class="question-text">${question.question}</div>
+                    <div class="options">${optionsHTML}</div>
+                    ${feedbackHTML}
+                </div>
+            `;
+            
+            // Add event listeners to options
+            const optionElements = quizContainer.querySelectorAll('.option');
+            optionElements.forEach(option => {
+                option.addEventListener('click', selectOption);
+            });
+            
+            // Update navigation buttons
+            prevBtn.disabled = currentQuestion === 0;
+            nextBtn.textContent = currentQuestion === quizData.length - 1 ? 'Finish Quiz' : 'Next';
+        }
+
+        // Select an option
+        function selectOption(e) {
+            if (userAnswers[currentQuestion] !== null) return; // Already answered
+            
+            const selectedOption = e.currentTarget;
+            const selectedIndex = parseInt(selectedOption.dataset.index);
+            
+            userAnswers[currentQuestion] = selectedIndex;
+            
+            // Check if answer is correct
+            if (selectedIndex === quizData[currentQuestion].answer) {
+                score++;
+                scoreEl.textContent = score;
+            } else {
+                // Add to incorrect questions list
+                incorrectQuestions.push({
+                    question: quizData[currentQuestion].question,
+                    userAnswer: selectedIndex,
+                    correctAnswer: quizData[currentQuestion].answer,
+                    options: quizData[currentQuestion].options,
+                    explanation: quizData[currentQuestion].explanation,
+                    questionNumber: currentQuestion + 1
+                });
+            }
+            
+            showQuestion();
+            updateProgressBar();
+        }
+
+        // Show next question
+        function showNextQuestion() {
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // Show previous question
+        function showPreviousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Show results
+        function showResults() {
+            quizContainer.style.display = 'none';
+            document.querySelector('.navigation').style.display = 'none';
+            document.querySelector('.progress-container').style.display = 'none';
+            document.querySelector('.stats').style.display = 'none';
+            
+            finalScoreEl.textContent = score;
+            
+            // Performance message
+            const percentage = (score / quizData.length) * 100;
+            let message = '';
+            if (percentage >= 80) {
+                message = 'Excellent! You have a strong understanding of Lymphatic System and Hormones.';
+            } else if (percentage >= 60) {
+                message = 'Good job! You have a solid grasp of the material.';
+            } else if (percentage >= 40) {
+                message = 'Not bad! Review the material and try again.';
+            } else {
+                message = 'Keep studying! Review the lectures and try again.';
+            }
+            
+            performanceMessageEl.textContent = message;
+            resultsContainer.style.display = 'block';
+            
+            // Show review button only if there are incorrect answers
+            if (incorrectQuestions.length > 0) {
+                reviewBtn.style.display = 'inline-block';
+            } else {
+                reviewBtn.style.display = 'none';
+            }
+        }
+
+        // Show incorrect questions
+        function showIncorrectQuestions() {
+            resultsContainer.style.display = 'none';
+            reviewSection.style.display = 'block';
+            
+            let incorrectHTML = '';
+            incorrectQuestions.forEach((item, index) => {
+                const correctLetter = String.fromCharCode(65 + item.correctAnswer);
+                const userLetter = String.fromCharCode(65 + item.userAnswer);
+                
+                incorrectHTML += `
+                    <div class="review-question">
+                        <div class="review-question-number">Question ${item.questionNumber}</div>
+                        <div class="review-question-text">${item.question}</div>
+                        <div>Your answer: ${userLetter}) ${item.options[item.userAnswer]}</div>
+                        <div class="review-answer review-correct">Correct answer: ${correctLetter}) ${item.options[item.correctAnswer]}</div>
+                        ${item.explanation ? `<div class="review-explanation">${item.explanation}</div>` : ''}
+                    </div>
+                `;
+            });
+            
+            incorrectQuestionsList.innerHTML = incorrectHTML;
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            userAnswers = new Array(quizData.length).fill(null);
+            incorrectQuestions = [];
+            
+            // Re-randomize the quiz data when restarting
+            quizData = createRandomizedQuizData();
+            
+            quizContainer.style.display = 'block';
+            document.querySelector('.navigation').style.display = 'flex';
+            document.querySelector('.progress-container').style.display = 'block';
+            document.querySelector('.stats').style.display = 'flex';
+            resultsContainer.style.display = 'none';
+            reviewSection.style.display = 'none';
+            
+            showQuestion();
+            updateProgressBar();
+        }
+
+        // Initialize the quiz when the page loads
+        window.onload = initQuiz;
+    </script>
+</body>
+</html>
